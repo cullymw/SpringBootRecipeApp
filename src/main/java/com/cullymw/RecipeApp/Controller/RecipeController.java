@@ -17,9 +17,23 @@ public class RecipeController {
         this.recipeService = recipeService;
     }
 
+    @GetMapping(path = "/all")
+    public List<Recipe> getAllRecipes() {
+        return recipeService.getAllRecipes();
+    }
+
     @GetMapping
-    public List<Recipe> getRecipes() {
-        return recipeService.getRecipes();
+    public List<Recipe> getRecipes(
+            @RequestParam(defaultValue = "") String name,
+            @RequestParam(defaultValue = "") String author,
+            @RequestParam(defaultValue = "") String difficulty,
+            @RequestParam(defaultValue = "") String category,
+            @RequestParam(defaultValue = "false") boolean veganOnly,
+            @RequestParam(defaultValue = "false") boolean vegetarianOnly,
+            @RequestParam(defaultValue = "false") boolean peanutFree,
+            @RequestParam(defaultValue = "false") boolean glutenFree
+            ) {
+        return recipeService.getRecipes(name, author, difficulty, category, veganOnly, vegetarianOnly, peanutFree, glutenFree);
     }
 
 //    @PostMapping

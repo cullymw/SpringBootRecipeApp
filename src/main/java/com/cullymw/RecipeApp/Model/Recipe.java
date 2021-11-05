@@ -19,11 +19,15 @@ public class Recipe {
     private String category;
     private Boolean vegan;
     private Boolean vegetarian;
-    private Boolean containsPeanuts;
-    private Boolean containsGluten;
+    private Boolean peanutFree;
+    private Boolean glutenFree;
     @OneToMany(targetEntity = Step.class, mappedBy = "recipe", fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
     private List<Step> steps = new ArrayList<>();
+
+    public Recipe() {
+        super();
+    }
 
     public Recipe(String name, String author, String ingredients, String difficulty, String category, Boolean vegan, Boolean vegetarian, Boolean containsPeanuts, Boolean containsGluten) {
         this.id = id;
@@ -34,8 +38,8 @@ public class Recipe {
         this.category = category;
         this.vegan = vegan;
         this.vegetarian = vegetarian;
-        this.containsPeanuts = containsPeanuts;
-        this.containsGluten = containsGluten;
+        this.peanutFree = containsPeanuts;
+        this.glutenFree = containsGluten;
     }
 
     public List<Step> getSteps() {
@@ -110,19 +114,19 @@ public class Recipe {
         this.vegetarian = vegetarian;
     }
 
-    public Boolean getContainsPeanuts() {
-        return containsPeanuts;
+    public Boolean getPeanutFree() {
+        return peanutFree;
     }
 
-    public void setContainsPeanuts(Boolean containsPeanuts) {
-        this.containsPeanuts = containsPeanuts;
+    public void setPeanutFree(Boolean peanutFree) {
+        this.peanutFree = peanutFree;
     }
 
-    public Boolean getContainsGluten() {
-        return containsGluten;
+    public Boolean getGlutenFree() {
+        return glutenFree;
     }
 
-    public void setContainsGluten(Boolean containsGluten) {
-        this.containsGluten = containsGluten;
+    public void setGlutenFree(Boolean glutenFree) {
+        this.glutenFree = glutenFree;
     }
 }

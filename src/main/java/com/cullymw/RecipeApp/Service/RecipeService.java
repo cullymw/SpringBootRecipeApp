@@ -16,8 +16,12 @@ public class RecipeService {
         this.recipeRepository = recipeRepository;
     }
 
-    public List<Recipe> getRecipes() {
+    public List<Recipe> getAllRecipes() {
         return recipeRepository.findAll();
+    }
+
+    public List<Recipe> getRecipes(String name, String author, String difficulty, String category, boolean veganOnly, boolean vegetarianOnly, boolean peanutFree, boolean glutenFree) {
+        return recipeRepository.searchRecipes(name, author, difficulty, category, veganOnly, vegetarianOnly, peanutFree, glutenFree);
     }
 
 //    public void addRecipe() {
