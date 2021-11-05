@@ -25,7 +25,7 @@ public class Recipe {
             cascade = CascadeType.ALL)
     private List<Step> steps = new ArrayList<>();
 
-    public Recipe(Long id, String name, String author, String ingredients, String difficulty, String category, Boolean vegan, Boolean vegetarian, Boolean containsPeanuts, Boolean containsGluten) {
+    public Recipe(String name, String author, String ingredients, String difficulty, String category, Boolean vegan, Boolean vegetarian, Boolean containsPeanuts, Boolean containsGluten) {
         this.id = id;
         this.name = name;
         this.author = author;
@@ -36,6 +36,14 @@ public class Recipe {
         this.vegetarian = vegetarian;
         this.containsPeanuts = containsPeanuts;
         this.containsGluten = containsGluten;
+    }
+
+    public List<Step> getSteps() {
+        return steps;
+    }
+
+    public void setSteps(List<Step> steps) {
+        this.steps = steps;
     }
 
     public Long getId() {

@@ -14,10 +14,10 @@ public class Step {
     @JoinColumn(name = "recipe_id")
     private Recipe recipe;
 
-    public Step(Long id, int orderNumber, String description) {
-        this.id = id;
+    public Step(int orderNumber, String description, Recipe recipe) {
         this.orderNumber = orderNumber;
         this.description = description;
+        this.recipe = recipe;
     }
 
     public Long getId() {

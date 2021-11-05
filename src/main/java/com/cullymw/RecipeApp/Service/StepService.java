@@ -3,9 +3,11 @@ package com.cullymw.RecipeApp.Service;
 import com.cullymw.RecipeApp.Model.Step;
 import com.cullymw.RecipeApp.Repository.StepRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class StepService {
     private final StepRepository stepRepository;
 
