@@ -1,6 +1,15 @@
 package com.cullymw.RecipeApp.Model;
 
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+@Entity
+@Table(name = "recipe")
 public class Recipe {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "id", updatable = false, nullable = false)
     private Long id;
     private String name;
     private String author;
@@ -12,6 +21,9 @@ public class Recipe {
     private Boolean vegetarian;
     private Boolean containsPeanuts;
     private Boolean containsGluten;
+    @OneToMany(targetEntity = Step.class, mappedBy = "recipe", fetch = FetchType.LAZY,
+            cascade = CascadeType.ALL)
+    private List<Step> steps = new ArrayList<>();
 
     public Recipe(Long id, String name, String author, String ingredients, String difficulty, String category, Boolean vegan, Boolean vegetarian, Boolean containsPeanuts, Boolean containsGluten) {
         this.id = id;

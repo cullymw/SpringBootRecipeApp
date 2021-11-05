@@ -1,9 +1,18 @@
 package com.cullymw.RecipeApp.Model;
 
+import javax.persistence.*;
+
+@Entity
 public class Step {
-    Long id;
-    int orderNumber;
-    String description;
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @Column(name = "id", updatable = false, nullable = false)
+    private Long id;
+    private int orderNumber;
+    private String description;
+    @ManyToOne()
+    @JoinColumn(name = "recipe_id")
+    private Recipe recipe;
 
     public Step(Long id, int orderNumber, String description) {
         this.id = id;
