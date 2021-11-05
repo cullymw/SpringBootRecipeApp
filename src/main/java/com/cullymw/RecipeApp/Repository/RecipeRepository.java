@@ -10,7 +10,7 @@ import java.util.List;
 @Repository
 public interface RecipeRepository extends JpaRepository<Recipe, Long> {
 
-    @Query("SELECT r FROM Recipe r WHERE r.name like ?1 AND r.author LIKE ?2 AND r.difficulty LIKE ?3 AND r.category LIKE ?4 AND r.vegan >= ?5 AND r.vegetarian >= ?6 AND r.peanutFree >= ?7 AND r.glutenFree >= ?8")
+    @Query("SELECT r FROM Recipe r WHERE r.name like CONCAT('%', ?1, '%') AND r.author LIKE CONCAT('%', ?2, '%') AND r.difficulty LIKE CONCAT('%', ?3, '%') AND r.category LIKE CONCAT('%', ?4, '%') AND r.vegan >= ?5 AND r.vegetarian >= ?6 AND r.peanutFree >= ?7 AND r.glutenFree >= ?8")
     public List<Recipe> searchRecipes(String name, String author, String difficulty, String category, boolean veganOnly, boolean vegetarianOnly, boolean peanutFree, boolean glutenFree);
 
 }
