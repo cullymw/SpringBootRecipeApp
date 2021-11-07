@@ -29,7 +29,7 @@ public class Recipe {
         super();
     }
 
-    public Recipe(String name, String author, String ingredients, String difficulty, String category, Boolean vegan, Boolean vegetarian, Boolean containsPeanuts, Boolean containsGluten) {
+    public Recipe(String name, String author, String ingredients, String difficulty, String category, Boolean vegan, Boolean vegetarian, Boolean peanutFree, Boolean glutenFree) {
         this.id = id;
         this.name = name;
         this.author = author;
@@ -38,8 +38,8 @@ public class Recipe {
         this.category = category;
         this.vegan = vegan;
         this.vegetarian = vegetarian;
-        this.peanutFree = containsPeanuts;
-        this.glutenFree = containsGluten;
+        this.peanutFree = peanutFree;
+        this.glutenFree = glutenFree;
     }
 
     public List<Step> getSteps() {

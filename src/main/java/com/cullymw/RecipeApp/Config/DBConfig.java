@@ -25,7 +25,7 @@ public class DBConfig {
                     "BBQ",
                     true,
                     true,
-                    false,
+                    true,
                     true
             );
 
@@ -38,7 +38,7 @@ public class DBConfig {
                     false,
                     false,
                     false,
-                    true
+                    false
             );
 
             Step step1 = new Step(1, "Step 1 for recipe 1", recipe1);
