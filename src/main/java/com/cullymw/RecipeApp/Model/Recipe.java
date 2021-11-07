@@ -1,5 +1,7 @@
 package com.cullymw.RecipeApp.Model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +23,7 @@ public class Recipe {
     private Boolean vegetarian;
     private Boolean peanutFree;
     private Boolean glutenFree;
+    @JsonManagedReference
     @OneToMany(targetEntity = Step.class, mappedBy = "recipe", fetch = FetchType.LAZY,
             cascade = CascadeType.ALL)
     private List<Step> steps = new ArrayList<>();

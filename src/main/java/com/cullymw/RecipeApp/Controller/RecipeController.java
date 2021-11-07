@@ -36,11 +36,11 @@ public class RecipeController {
         return recipeService.getRecipes(name, author, difficulty, category, veganOnly, vegetarianOnly, peanutFree, glutenFree);
     }
 
-//    @PostMapping
-//    public void addRecipe() {
-//        recipeService.addRecipe();
-//    }
-//
+    @PostMapping
+    public void addRecipe(@RequestBody Recipe recipe) {
+        recipeService.addRecipe(recipe);
+    }
+
 //    @PutMapping(path = "/{id}")
 //    public void updateRecipe() {
 //        recipeService.updateRecipe();

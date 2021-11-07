@@ -25,10 +25,10 @@ public class RecipeService {
         return recipeRepository.searchRecipes(name.toUpperCase(), author.toUpperCase(), difficulty.toUpperCase(), category.toUpperCase(), veganOnly, vegetarianOnly, peanutFree, glutenFree);
     }
 
-//    public void addRecipe() {
-//        recipeRepository.save();
-//    }
-//
+    public void addRecipe(Recipe recipe) {
+        recipeRepository.save(recipe);
+    }
+
 //    public void updateRecipe() {
 //        recipeRepository.update();
 //    }

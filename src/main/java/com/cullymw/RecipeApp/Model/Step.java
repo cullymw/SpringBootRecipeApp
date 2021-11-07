@@ -1,5 +1,7 @@
 package com.cullymw.RecipeApp.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 
 @Entity
@@ -10,6 +12,7 @@ public class Step {
     private Long id;
     private int orderNumber;
     private String description;
+    @JsonBackReference
     @ManyToOne()
     @JoinColumn(name = "recipe_id")
     private Recipe recipe;
