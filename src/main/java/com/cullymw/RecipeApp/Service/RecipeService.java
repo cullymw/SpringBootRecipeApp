@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Locale;
 
 @Service
 public class RecipeService {
@@ -21,7 +22,7 @@ public class RecipeService {
     }
 
     public List<Recipe> getRecipes(String name, String author, String difficulty, String category, boolean veganOnly, boolean vegetarianOnly, boolean peanutFree, boolean glutenFree) {
-        return recipeRepository.searchRecipes(name, author, difficulty, category, veganOnly, vegetarianOnly, peanutFree, glutenFree);
+        return recipeRepository.searchRecipes(name.toUpperCase(), author.toUpperCase(), difficulty.toUpperCase(), category.toUpperCase(), veganOnly, vegetarianOnly, peanutFree, glutenFree);
     }
 
 //    public void addRecipe() {
