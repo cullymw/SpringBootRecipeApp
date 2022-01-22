@@ -28,11 +28,11 @@ public class RecipeService {
         recipeRepository.save(recipe);
     }
 
-//    public void updateRecipe() {
-//        recipeRepository.update();
-//    }
-//
-//    public void deleteRecipe() {
-//        recipeRepository.delete();
-//    }
+    public void updateRecipe(Long id, Recipe recipe) {
+        recipeRepository.save(recipe);
+    }
+
+    public void deleteRecipe(Long id) {
+        recipeRepository.deleteById(id);
+    }
 }

@@ -41,13 +41,13 @@ public class RecipeController {
         recipeService.addRecipe(recipe);
     }
 
-//    @PutMapping(path = "/{id}")
-//    public void updateRecipe() {
-//        recipeService.updateRecipe();
-//    }
-//
-//    @DeleteMapping(path = "/{id}")
-//    public void deleteRecipe() {
-//        recipeService.deleteRecipe();
-//    }
+    @PutMapping(path = "/{id}")
+    public void updateRecipe(@RequestBody Recipe recipe) {
+        recipeService.updateRecipe(recipe.getId(), recipe);
+    }
+
+    @DeleteMapping(path = "/{id}")
+    public void deleteRecipe(@PathVariable Long id) {
+        recipeService.deleteRecipe(id);
+    }
 }
