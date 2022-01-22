@@ -33,7 +33,6 @@ public class Recipe {
     }
 
     public Recipe(String name, String author, String ingredients, String difficulty, String category, Boolean vegan, Boolean vegetarian, Boolean peanutFree, Boolean glutenFree) {
-        this.id = id;
         this.name = name;
         this.author = author;
         this.ingredients = ingredients;
